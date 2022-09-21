@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head lang="pt-br">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cadastro</title>
+  </head>
+
+  <body>
+    <h1 align="left">Cadastro de Alunos</h1>
+
+    <form name="dados_pessoais" action="index.html" method="POST">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <table class="dados-pessoais">
+          <tr>
+            <td>Nome:</td>
+            <td colspan="3">
+              <input
+                type="text"
+                name="Nome:"
+                size="50"
+                id="name"
+                value="Carlos Henrique Silva"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Naturalidade:</td>
+            <td colspan="2">
+              <input
+                type="text"
+                name="Naturalidade:"
+                size="25"
+                id="naturalidade"
+              />
+            </td>
+            <td rowspan="2">
+              <fieldset>
+                <legend>Sexo</legend>
+                <input
+                  type="radio"
+                  name="genero"
+                  value="Masculino"
+                  checked
+                />Masculino
+                <input type="radio" name="genero" value="Feminino" />Feminino
+              </fieldset>
+            </td>
+          </tr>
+          <tr>
+            <td>RA:</td>
+            <td colspan="2" rowspan="2">
+              <input
+                type="text"
+                name="Naturalidade:"
+                size="25"
+                value="G18AGH-9"
+              />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+        <table class="dados-endereco">
+          <tr>
+            <td>Rua:</td>
+            <td colspan="3"><input type="text" name="Rua:" size="50" /></td>
+          </tr>
+          <tr>
+            <td>Número:</td>
+            <td><input type="text" name="Numero:" size="25" /></td>
+            <td>Complemento:</td>
+            <td><input type="text" name="Complemento" sizer="25" /></td>
+            <td>Bairro:</td>
+            <td><input type="text" name="Bairro" sizer="25" /></td>
+          </tr>
+          <tr>
+            <td>CEP:</td>
+            <td><input type="text" name="CEP:" size="25" /></td>
+            <td>Cidade:</td>
+            <td><input type="text" name="Cidade" sizer="25" /></td>
+            <td>Estado:</td>
+            <td>
+              <select name="Estado">
+                <option value="MG">Minas Gerais</option>
+                <option value="SP" selected>São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Informações acadêmicas</legend>
+        <table class="dados-academicos">
+          <tr>
+            <td>Curso:</td>
+            <td><input type="text" name="Curso:" size="25" /></td>
+            <td>Matrícula:</td>
+            <td><input type="text" name="Matrícula" sizer="25" /></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <fieldset>
+                <legend>Disciplinas cursados ou em andamento</legend>
+                <table>
+                  <tr>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="Disciplinas"
+                        value="Algoritmos"
+                      />Algoritmos
+                    </td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="Disciplinas"
+                        value="EstDados"
+                      />Est. Dados
+                    </td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="Disciplinas"
+                        value="CalculoI"
+                        checked
+                      />Cálculo I
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="Disciplinas"
+                        value="ProgrOO"
+                      />Progr O Obj
+                    </td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="Disciplinas"
+                        value="BD"
+                      />Banco de Dados
+                    </td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="Disciplinas"
+                        value="Gestão TI"
+                      />Gestão em TI
+                    </td>
+                  </tr>
+                </table>
+              </fieldset>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>Informações Adicionais</legend>
+        <table class="dados-adicionais">
+          <tr>
+            <td colspan="4">
+              <textarea name="InfAdd" cols="80" rows="10"></textarea>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <input type="submit" value="Enviar dados" />
+      <input type="reset" value="Limpar dados" />
+    </form>
+    <button onclick="submit()">Verificar Preenchimento</button>
+
+    <script>
+      function submit() {
+        let input = document.querySelectorAll("input[type=text]");
+
+        const arr = Array.from(input);
+
+        let newArry = arr.splice(9, 8);
+
+        arr.map((item) => {
+          if (item.value == "") {
+            item.value = "Preenchimento inconpleto";
+            item.style.color = "red";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset{
+    width: 20px
+}
+
+input{
+    background-color: yellow;
+}
+
+.dados-pessoais{
+    background-color: rgb(130, 130, 255);
+}
+
+.dados-endereco{
+    background-color: aquamarine;
+}
+
+.dados-academicos{
+    background-color: brown;
+}
+
+.dados-adicionais{
+    background-color: chocolate;
+}
